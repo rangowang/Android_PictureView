@@ -1,0 +1,7 @@
+#Thu Oct 20 15:46:47 CST 2016
+base.0=/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d8d7fa1c6615969f33aedc2f8534d137cc9614f7
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ebeb66610bc053b8f61bf1d13eaf17ff5ca029e1/classes.dex
+base.1=/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ebeb66610bc053b8f61bf1d13eaf17ff5ca029e1
+file.0=/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d8d7fa1c6615969f33aedc2f8534d137cc9614f7/classes.dex

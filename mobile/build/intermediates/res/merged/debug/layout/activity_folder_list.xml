@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:auto="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".FolderList">
+
+    <!--<net.suntec.pset.pictureview.G-->
+        <!--android:id="@+id/automatic"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+
+        <!--auto:auto_column="5"-->
+        <!--auto:auto_lines="2" >-->
+    <!--</net.suntec.pset.pictureview.G>-->
+    <!--auto:auto_button="@drawable/btn_status_style"-->
+
+    <GridView
+        android:id="@+id/main_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:stretchMode="columnWidth"
+        android:horizontalSpacing="20dip"
+        android:gravity="center"
+        android:verticalSpacing="20dip"
+        android:columnWidth="90dip"
+        android:numColumns="2" >
+    </GridView>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/menuBar"
+        android:background="@drawable/menubar_background"
+
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btn_return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_return"
+            />
+        <TextView
+            android:id="@+id/pageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            android:gravity="center"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_picture_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.suntec.pset.pictureview.PictureView"
+    >
+
+    <ImageView
+        android:id="@+id/imageview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/menuBar"
+        android:background="@drawable/menubar_background"
+        android:weightSum="1">
+
+        <Button
+            android:id="@+id/btn_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_list"
+        />
+        <Button
+
+            android:id="@+id/btn_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_play"
+            android:layout_toStartOf="@+id/btn_left_rotate"
+            />
+        <Button
+            android:id="@+id/btn_left_rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_leftrotate"
+            android:layout_toStartOf="@+id/btn_right_rotate"
+            />
+
+        <Button
+            android:id="@+id/btn_right_rotate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_rightrotate"
+            android:layout_toStartOf="@+id/btn_set_wallpaper"
+            />
+
+        <Button
+            android:id="@+id/btn_set_wallpaper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_setwallpaper"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+</RelativeLayout>
