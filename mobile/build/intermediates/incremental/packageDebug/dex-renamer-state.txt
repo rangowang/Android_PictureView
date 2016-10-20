@@ -1,7 +1,7 @@
-#Thu Oct 20 15:46:47 CST 2016
-base.0=/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d8d7fa1c6615969f33aedc2f8534d137cc9614f7
+#Thu Oct 20 17:21:03 CST 2016
+base.0=/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_1e65c9d532b0529cfb9a75a718d914cbd161e16d
 renamed.1=classes.dex
 renamed.0=classes2.dex
-file.1=/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ebeb66610bc053b8f61bf1d13eaf17ff5ca029e1/classes.dex
-base.1=/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_ebeb66610bc053b8f61bf1d13eaf17ff5ca029e1
-file.0=/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_d8d7fa1c6615969f33aedc2f8534d137cc9614f7/classes.dex
+file.1=/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_74cc46b8b4d00fea12820b9fe95181461f5ef4c9/classes.dex
+base.1=/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_74cc46b8b4d00fea12820b9fe95181461f5ef4c9
+file.0=/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_1e65c9d532b0529cfb9a75a718d914cbd161e16d/classes.dex

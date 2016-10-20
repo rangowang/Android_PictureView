@@ -4,13 +4,16 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.Toast;
 
@@ -18,14 +21,28 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.Reader;
 
 public class PVSetWallpaper extends AppCompatActivity {
 
     private Uri imageUri;
     private ImageView mImageView;
     private String path;
-    private Button mBtnPreview;
+    private Button mPreviewBtn;
+    private Button mCancelBtn;
+    private Button mInitializeBtn;
+    private Button mFinishBtn;
+
     private File image;
+    private RelativeLayout mRootLayout;
+    private FrameLayout mFrameLayout;
+    private Handler mHandler = new Handler();
+    private Runnable mRunnable = new Runnable() {
+        @Override
+        public void run() {
+            mFrameLayout.setVisibility(View.INVISIBLE);
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,16 +53,22 @@ public class PVSetWallpaper extends AppCompatActivity {
 
         mImageView = (ImageView) findViewById(R.id.imageView);
         mImageView.setImageURI(imageUri);
-
-        mBtnPreview = (Button) findViewById(R.id.preview);
-        mBtnPreview.setOnClickListener(new View.OnClickListener() {
+        mCancelBtn = (Button) findViewById(R.id.cancel);
+        mCancelBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        mPreviewBtn = (Button) findViewById(R.id.preview);
+        mPreviewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 File file=new File(Environment.getExternalStorageDirectory(),
                         "/temp/"+System.currentTimeMillis() + ".jpg");
-                if (!file.getParentFile().exists())
-                    file.getParentFile().mkdirs();
+//                if (!file.getParentFile().exists())
+//                    file.getParentFile().mkdirs();
                 Uri outputUri = FileProvider.getUriForFile(v.getContext(),
                         "net.suntec.pset.fileprovider",image);
                 Uri inputUri=FileProvider.getUriForFile(v.getContext(),
@@ -68,6 +91,22 @@ public class PVSetWallpaper extends AppCompatActivity {
 //                intent.putExtra("outputY", 150);
                 intent.putExtra("return-data", true);
                 PVSetWallpaper.this.startActivityForResult(intent, 200);
+            }
+        });
+
+        mRootLayout = (RelativeLayout) findViewById(R.id.pvset_wallpaper);
+        mFrameLayout = (FrameLayout) findViewById(R.id.framelayout);
+        mRootLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mFrameLayout.getVisibility()!=View.VISIBLE) {
+                    mFrameLayout.setVisibility(View.VISIBLE);
+                    mHandler.postDelayed(mRunnable, 4000);
+                }
+                else {
+                    mFrameLayout.setVisibility(View.INVISIBLE);
+                    mHandler.removeCallbacks(mRunnable);
+                }
             }
         });
     }

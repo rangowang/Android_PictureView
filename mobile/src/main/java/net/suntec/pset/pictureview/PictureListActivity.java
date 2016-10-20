@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -23,11 +24,19 @@ public class PictureListActivity extends AppCompatActivity {
     private GridView mGridView;
     private List<String> list;
     private PictureAdapter adapter;
+    private Button mReturnBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture_list);
 
+        mReturnBtn = (Button) findViewById(R.id.btn_return);
+        mReturnBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         mGridView = (GridView) findViewById(R.id.picture_gridView);
         list = getIntent().getStringArrayListExtra("data");
 

@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -37,9 +38,9 @@ public class FolderList extends AppCompatActivity {
 //    private MyAutoMaticPageAdapter adapter;
     private GroupAdapter adapter;
 //    private List<Integer> myData;
-    private HashMap<String, List<String>> mGruopMap = new HashMap<String, List<String>>();
-    private List<ImageBean> list = new ArrayList<ImageBean>();
-
+    private HashMap<String, List<String>> mGruopMap = new HashMap<>();
+    private List<ImageBean> list = new ArrayList<>();
+    private Button mReturnBtn;
     private Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -48,7 +49,6 @@ public class FolderList extends AppCompatActivity {
                 case SCAN_OK:
                     //关闭进度条
                     //mProgressDialog.dismiss();
-
 
                     adapter = new GroupAdapter(FolderList.this, list = subGroupOfImage(mGruopMap), mGroupGridView);
                     mGroupGridView.setAdapter(adapter);
@@ -65,7 +65,13 @@ public class FolderList extends AppCompatActivity {
         setContentView(R.layout.activity_folder_list);
         mGroupGridView = (GridView) findViewById(R.id.main_grid);
         mTextView = (TextView) findViewById(R.id.pageView);
-
+        mReturnBtn = (Button) findViewById(R.id.btn_return);
+        mReturnBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         getImages();
         //点击事件
         mGroupGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -117,7 +123,7 @@ public class FolderList extends AppCompatActivity {
 
                     //根据父路径名放入到mGruopMap, 包含的图片路径
                     if (!mGruopMap.containsKey(parentName)) {
-                        List<String> chileList = new ArrayList<String>();
+                        List<String> chileList = new ArrayList<>();
                         chileList.add(path);
                         mGruopMap.put(parentName, chileList);
                     } else {
@@ -137,30 +143,26 @@ public class FolderList extends AppCompatActivity {
      * 组装分组界面GridView的数据源，因为我们扫描手机的时候将图片信息放在HashMap中
      * 所以需要遍历HashMap将数据组装成List
      *
-     * @param mGruopMap
-     * @return
+     * @param mGruopMap , nothing
+     * @return          , nothing
      */
     private List<ImageBean> subGroupOfImage(HashMap<String, List<String>> mGruopMap){
         if(mGruopMap.size() == 0){
             return null;
         }
-        List<ImageBean> list = new ArrayList<ImageBean>();
+        List<ImageBean> list = new ArrayList<>();
 
         Iterator<Map.Entry<String, List<String>>> it = mGruopMap.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry<String, List<String>> entry = it.next();
-            ImageBean mImageBean = new ImageBean();
-            String key = entry.getKey();
-            List<String> value = entry.getValue();
 
+        for (Map.Entry<String, List<String>> entry : mGruopMap.entrySet()) {
+            ImageBean mImageBean = new ImageBean();
+            List<String> value = entry.getValue();
+            String key = entry.getKey();
             mImageBean.setFolderName(key);
             mImageBean.setImageCounts(value.size());
             mImageBean.setTopImagePath(value.get(0));//获取该组的第一张图片
-
             list.add(mImageBean);
         }
-
         return list;
-
     }
 }

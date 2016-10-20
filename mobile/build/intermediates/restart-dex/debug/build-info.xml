@@ -4,33 +4,46 @@
     density="560dpi"
     format="8"
     plugin-version="2.2.0"
-    timestamp="77796535974976"
+    timestamp="83564261639246"
     token="6165455529091766740"
-    verifier="FULL_BUILD_REQUESTED" >
+    verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="972" />
+        duration="360" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="265" />
+        duration="16" />
     <task
         name="verifier"
-        duration="10" />
+        duration="5" />
 
     <artifact
-        location="/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/outputs/apk/mobile-debug.apk"
-        type="MAIN" />
+        location="/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+        type="RESOURCES" />
+    <artifact
+        location="/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+        type="DEX" />
 
     <build
-        timestamp="77796535974976"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="83448689640201"
+        verifier="BINARY_MANIFEST_FILE_CHANGE" >
         <artifact
-            location="/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/outputs/apk/mobile-debug.apk"
+            location="/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/outputs/apk/mobile-debug.apk"
             type="MAIN" />
+    </build>
+    <build
+        timestamp="83564261639246"
+        verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
+        <artifact
+            location="/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/transforms/dex/debug/folders/1000/5/slice_6/classes.dex"
+            type="DEX" />
     </build>
 
 </instant-run>

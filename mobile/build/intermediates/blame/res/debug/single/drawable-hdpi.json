@@ -8,16 +8,20 @@
         "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/albums_bg.png"
     },
     {
-        "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_leftrotate1.png",
-        "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_leftrotate1.png"
-    },
-    {
         "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_list1.png",
         "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_list1.png"
     },
     {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_return1.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_return1.png"
+    },
+    {
         "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_rightrotate1.png",
         "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_rightrotate1.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_play2.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_play2.png"
     },
     {
         "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_return1.png",
@@ -28,20 +32,20 @@
         "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/albums_icon_bg9.png"
     },
     {
-        "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/sd1.png",
-        "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/sd1.png"
-    },
-    {
         "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_list2.png",
         "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_list2.png"
     },
     {
-        "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_setwallpaper1.png",
-        "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_setwallpaper1.png"
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_setwallpaper1.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_setwallpaper1.png"
     },
     {
-        "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_setwallpaper2.png",
-        "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_setwallpaper2.png"
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_leftrotate1.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_leftrotate1.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/albums_icon_bg9.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/albums_icon_bg9.png"
     },
     {
         "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/friends_sends_pictures_no.png",
@@ -60,11 +64,75 @@
         "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_leftrotate2.png"
     },
     {
-        "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_rightrotate2.png",
-        "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_rightrotate2.png"
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/menubar_background.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/menubar_background.png"
     },
     {
         "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_return2.png",
         "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_return2.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_play1.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_play1.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_leftrotate1.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_leftrotate1.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_list1.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_list1.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_rightrotate2.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_rightrotate2.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/sd1.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/sd1.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/albums_bg.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/albums_bg.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_list2.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_list2.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_return2.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_return2.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_setwallpaper1.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_setwallpaper1.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/friends_sends_pictures_no.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/friends_sends_pictures_no.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_setwallpaper2.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_setwallpaper2.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_setwallpaper2.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_setwallpaper2.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_rightrotate1.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_rightrotate1.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_leftrotate2.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/btn_leftrotate2.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/btn_rightrotate2.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/res/drawable-hdpi/btn_rightrotate2.png"
+    },
+    {
+        "merged": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/build/intermediates/res/merged/debug/drawable-hdpi/sd1.png",
+        "source": "/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/res/drawable-hdpi/sd1.png"
     }
 ]

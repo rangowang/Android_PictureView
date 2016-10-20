@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">PictureView</string>
     <string name="title_activity_picture_list">PictureList</string>
-
-    <string name="pages">1/2</string>
+    <string name="nullString">null</string>
+    <string name="cancel">Cancel</string>
+    <string name="init">Initialize</string>
+    <string name="finish">Setting Finished</string>
+    <string name="preview">Preview</string>
 </resources>

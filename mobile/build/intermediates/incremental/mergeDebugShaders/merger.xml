@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/wangzhanfei/AndroidStudioProjects/PictureView/mobile/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/wangzhanfei/AndroidStudioProjects/pictureview/Android_PictureView/mobile/src/debug/shaders"/></dataSet></merger>
