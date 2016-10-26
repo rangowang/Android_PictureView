@@ -1,24 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:id="@+id/pvset_wallpaper"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:orientation="vertical"
     tools:context="net.suntec.pset.pictureview.PVSetWallpaper">
 
-    <ImageView
+    <com.edmodo.cropper.CropImageView
         android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/content_padding"
+        custom:fixAspectRatio="false"
+        custom:aspectRatioX="60"
+        custom:aspectRatioY="40"
+        custom:guidelines="onTouch"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:layout_gravity="center_horizontal|center_vertical"/>
+
+
+    <ImageView
+        android:id="@+id/croppedImageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/nullString"/>
+        android:adjustViewBounds="true"
+        android:contentDescription="cropped picture"
+        android:scaleType="fitXY"/>
 
     <FrameLayout
         android:id="@+id/framelayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="invisible"
+        tools:visibility="visible">
 
         <Button
             android:layout_width="wrap_content"
@@ -45,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/finish"
-                android:id="@+id/OK"
+                android:id="@+id/finish"
                 android:layout_gravity="center"
                 android:padding="15dp"
                 android:textAllCaps="false"/>
@@ -62,4 +80,4 @@
         </LinearLayout>
 
     </FrameLayout>
-</RelativeLayout>
+</FrameLayout>

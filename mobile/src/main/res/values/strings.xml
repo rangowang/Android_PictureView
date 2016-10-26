@@ -6,4 +6,14 @@
     <string name="init">Initialize</string>
     <string name="finish">Setting Finished</string>
     <string name="preview">Preview</string>
+
+
+    <string name="no_device">Please insert a USB/SD storage.</string>
+    <string name="nopicture">There has no playable files in the device.</string>
+    <string name="preparing">Preparing</string>
+    <!--<string name="frame_line">preparing</string>-->
+
+    <string name="frame_line">the_background_frame_line</string>
+    <string name="preparing_text">Preparing...</string>
+    <string name="pic">show the picture</string>
 </resources>

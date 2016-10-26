@@ -1,14 +1,19 @@
 package net.suntec.pset.pictureview;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.WallpaperManager;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
-import android.support.v4.content.FileProvider;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
@@ -17,16 +22,19 @@ import android.widget.RelativeLayout;
 import android.widget.TabHost;
 import android.widget.Toast;
 
+import com.edmodo.cropper.CropImageView;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.Reader;
 
-public class PVSetWallpaper extends AppCompatActivity {
+public class PVSetWallpaper extends Activity {
 
     private Uri imageUri;
-    private ImageView mImageView;
+    private CropImageView mCropImageView;
+    private ImageView mCroppedImageView;
     private String path;
     private Button mPreviewBtn;
     private Button mCancelBtn;
@@ -34,7 +42,7 @@ public class PVSetWallpaper extends AppCompatActivity {
     private Button mFinishBtn;
 
     private File image;
-    private RelativeLayout mRootLayout;
+    private FrameLayout mRootLayout;
     private FrameLayout mFrameLayout;
     private Handler mHandler = new Handler();
     private Runnable mRunnable = new Runnable() {
@@ -49,15 +57,38 @@ public class PVSetWallpaper extends AppCompatActivity {
         setContentView(R.layout.activity_pvset_wallpaper);
         path = getIntent().getStringExtra("path");
         image = new File(path);
-        imageUri = Uri.fromFile(image);
+        Bitmap bm = BitmapFactory.decodeFile(path);
+        mCroppedImageView = (ImageView) findViewById(R.id.croppedImageView);
+        mCroppedImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCroppedImageView.setVisibility(View.INVISIBLE);
+            }
+        });
 
-        mImageView = (ImageView) findViewById(R.id.imageView);
-        mImageView.setImageURI(imageUri);
+        mCropImageView = (CropImageView) findViewById(R.id.imageView);
+        mCropImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(mFrameLayout.getVisibility()!=View.VISIBLE) {
+                    mFrameLayout.setVisibility(View.VISIBLE);
+                    mHandler.postDelayed(mRunnable, 4000);
+                }
+                else {
+                    mFrameLayout.setVisibility(View.INVISIBLE);
+                    mHandler.removeCallbacks(mRunnable);
+                }
+            }
+        });
+        mCropImageView.setImageBitmap(bm);
+
         mCancelBtn = (Button) findViewById(R.id.cancel);
         mCancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
+//                Intent intent = new Intent(PVSetWallpaper.this, PictureListActivity.class);
+//                startActivity(intent);
             }
         });
         mPreviewBtn = (Button) findViewById(R.id.preview);
@@ -65,36 +96,14 @@ public class PVSetWallpaper extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                File file=new File(Environment.getExternalStorageDirectory(),
-                        "/temp/"+System.currentTimeMillis() + ".jpg");
-//                if (!file.getParentFile().exists())
-//                    file.getParentFile().mkdirs();
-                Uri outputUri = FileProvider.getUriForFile(v.getContext(),
-                        "net.suntec.pset.fileprovider",image);
-                Uri inputUri=FileProvider.getUriForFile(v.getContext(),
-                        "net.suntec.pset.fileprovider",
-                        image);
-                //通过FileProvider创建一个content类型的Uri
-
-                Intent intent = new Intent();
-                intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-                intent.setAction("com.android.camera.action.CROP");
-                intent.setDataAndType(inputUri, "image/*");// mUri是已经选择的图片Uri
-                intent.putExtra("data", "true");
-                intent.putExtra("aspectX", 1);// 裁剪框比例
-                intent.putExtra("aspectY", 1);
-                intent.putExtra("scale", true);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT, outputUri);
-                intent.putExtra("outputFormat",
-                        Bitmap.CompressFormat.JPEG.toString());
-//                intent.putExtra("outputX", 150);// 输出图片大小
-//                intent.putExtra("outputY", 150);
-                intent.putExtra("return-data", true);
-                PVSetWallpaper.this.startActivityForResult(intent, 200);
+                Bitmap croppedImage = mCropImageView.getCroppedImage();
+                mCroppedImageView.setImageBitmap(croppedImage);
+                mCroppedImageView.setVisibility(View.VISIBLE);
+                mFrameLayout.setVisibility(View.INVISIBLE);
             }
         });
 
-        mRootLayout = (RelativeLayout) findViewById(R.id.pvset_wallpaper);
+        mRootLayout = (FrameLayout) findViewById(R.id.pvset_wallpaper);
         mFrameLayout = (FrameLayout) findViewById(R.id.framelayout);
         mRootLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +118,53 @@ public class PVSetWallpaper extends AppCompatActivity {
                 }
             }
         });
+
+        mInitializeBtn = (Button) findViewById(R.id.init);
+        mInitializeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCropImageView.initCropWindow();
+            }
+        });
+
+        mFinishBtn = (Button) findViewById(R.id.finish);
+        mFinishBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(PVSetWallpaper.this)
+                        .setMessage("Set the image in the frame as the wallpaper?")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                WallpaperManager wallpaperManager = WallpaperManager.getInstance(PVSetWallpaper.this);
+                                Resources res = getResources();
+
+                                Bitmap croppedImage = mCropImageView.getCroppedImage();
+                                try
+                                {
+                                    wallpaperManager.setBitmap(croppedImage);
+                                }
+                                catch (IOException e)
+                                {
+                                    e.printStackTrace();
+                                }
+
+
+
+                                finish();
+                                //Toast.makeText(PictureView.this, )
+                            }
+                        })
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                ;
+                            }
+                        })
+                        .show();
+            }
+        });
+
     }
 
     @Override

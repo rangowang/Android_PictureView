@@ -54,7 +54,7 @@ public class GroupAdapter extends BaseAdapter {
         String path = mImageBean.getTopImagePath();
         if(convertView == null){
             viewHolder = new ViewHolder();
-            convertView = mInflater.inflate(R.layout.gridview_item, null);
+            convertView = mInflater.inflate(R.layout.gridview_folder_list, null);
             viewHolder.mImageView = (MyImageView) convertView.findViewById(R.id.group_image);
             viewHolder.mTextViewTitle = (TextView) convertView.findViewById(R.id.group_title);
             viewHolder.mTextViewCounts = (TextView) convertView.findViewById(R.id.group_count);

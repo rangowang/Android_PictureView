@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -22,13 +23,21 @@ public class PictureListActivity extends AppCompatActivity {
 //    private List<String> myData;
 
     private GridView mGridView;
-    private List<String> list;
+    private ArrayList<String> list;
     private PictureAdapter adapter;
     private Button mReturnBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_picture_list);
+        if(savedInstanceState!=null) {
+            Log.d("PictureListActivity", "onCreate: savedInstanceState");
+            list = savedInstanceState.getStringArrayList("PictureList");
+        }
+        else {
+            Log.d("PictureListActivity", "onCreate: getIntent");
+            list = getIntent().getStringArrayListExtra("data");
+        }
 
         mReturnBtn = (Button) findViewById(R.id.btn_return);
         mReturnBtn.setOnClickListener(new View.OnClickListener() {
@@ -38,7 +47,6 @@ public class PictureListActivity extends AppCompatActivity {
             }
         });
         mGridView = (GridView) findViewById(R.id.picture_gridView);
-        list = getIntent().getStringArrayListExtra("data");
 
         adapter = new PictureAdapter(this, list, mGridView);
         mGridView.setAdapter(adapter);
@@ -47,14 +55,24 @@ public class PictureListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                String path = list.get(position); // 图片的路径
+                // 图片的路径
+//                String path = list.get(position);
                 // 展示图片
-                Intent mIntent = new Intent(PictureListActivity.this, PictureView.class);
-                mIntent.putExtra("data", path);
-                startActivity(mIntent);
+                Intent intent = new Intent(PictureListActivity.this, PictureView.class);
+                intent.putStringArrayListExtra("PictureList", list);
+                System.out.println("Show the ImageList before put:" + list);
+
+                intent.putExtra("index", position);
+                startActivity(intent);
 
             }
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putStringArrayList("PicturcList", list);
     }
 
 }

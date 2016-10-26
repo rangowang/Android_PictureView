@@ -5,7 +5,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context=".FolderList">
+              tools:context=".FolderListActivity">
 
     <!--<net.suntec.pset.pictureview.G-->
         <!--android:id="@+id/automatic"-->
@@ -29,7 +29,7 @@
         android:gravity="center"
         android:verticalSpacing="20dip"
         android:columnWidth="90dip"
-        android:numColumns="2" >
+        android:numColumns="3" >
     </GridView>
     <RelativeLayout
         android:layout_width="match_parent"

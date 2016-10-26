@@ -7,8 +7,6 @@ import android.view.ViewGroup;
 
 import java.util.List;
 
-import static android.R.id.list;
-
 /**
  * Created by wangzhanfei on 16-10-17.
  */
@@ -34,7 +32,7 @@ public class MyAutoMaticPageAdapter extends BaseAutoAdapter {
 
     @Override
     public  View getItemView(int position, ViewGroup parent) {
-        View view = LayoutInflater.from(context).inflate(R.layout.gridview_item, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.gridview_folder_list, null);
 
         return view;
     }
